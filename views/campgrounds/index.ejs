@@ -1,0 +1,70 @@
+<% layout('/layouts/boilerplate')%>
+<link rel="stylesheet" href="/styleSheets/index.css"></link>
+<link rel="stylesheet" href="/styleSheets/stars.css"></link>
+
+
+    <div class="row mx-0 mt-3 justify-content-center">
+        <div class="col-lg-6 col-md-7 col col-sm-9">
+        <form class="d-flex" action="/campgrounds/search" method="POST">
+            <div class="input-group">
+              <input type="text" class="form-control text-white" placeholder="Enter Campground Name" name="search" aria-label="Enter Campground Name" aria-describedby="searchbtn">
+              <button class="btn btn-outline-success" type="submit" id="searchbtn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+  </div>
+<main class="row mt-4 mb-2 mx-0  mx-lg-2 justify-content-evenly">
+    <section class="col-lg-6 col-xl-7 mb-3 mb-lg-0" id="map"></section>
+    <section class="col-lg-6 col-xl-5 mb-3 mb-lg-0 px-0 px-lg-2">
+        
+        <div id="campground-list" class="d-flex flex-wrap justify-content-evenly">
+            <% for(let i = 0; i < Math.min(Campgrounds.length, 5); i++) { %>
+                <div class="list row mb-3 mx-2 align-items-center text-white">
+                    <div class="col-lg-5 ps-0 pe-0 pe-lg-1">
+                        <img src="<%=Campgrounds[i].images[0].url%>" crossorigin class="img-fluid image" alt="">
+                    </div>
+                    <div class="col-lg-5 mt-lg-0 mt-1">
+                        <h5 class="title"><%= Campgrounds[i].title %> </h5>
+                        <div class="avgRating" ></div>
+                        <div class="d-flex align-items-center"><span id="location-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill text-primary mb-1 me-1" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                          </svg></span>
+                          <% if (Campgrounds[i].location.length > 20) { %>
+                            <small><%= Campgrounds[i].location.substring(0, 23) %>...</small>
+                          <% } else { %>
+                            <small><%= Campgrounds[i].location %></small>
+                          <% } %>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 d-flex justify-content-center mt-2 mt-lg-0">
+                        <a class="btn btn-primary mb-3" href="/campgrounds/<%= Campgrounds[i]._id %>">view</a>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    <% if (Campgrounds.length > 5) { %>
+        <div class="d-flex justify-content-center">
+            <button id="prev-button" class="btn btn-primary px-5 me-5">Prev</button>
+            <button id="next-button" class="btn btn-primary px-5">Next</button>
+        </div>
+    <% } %>
+    </section>
+</main>
+
+<script>
+    const mapToken = '<%- process.env.MAPBOX_TOKEN%>';
+    const campgrounds = {features: <%-JSON.stringify(Campgrounds)%>};
+</script>
+
+<script>const Campgrounds = <%-JSON.stringify(Campgrounds)%>;</script>
+
+<script src="/javascripts/index.js"></script>
+<script src="/javascripts/indexClusterMap.js"></script>
+    
+
+     
+
+   

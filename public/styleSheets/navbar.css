@@ -1,0 +1,32 @@
+.tagline1{
+    margin-top: 0.1rem;
+    font-size: 0.7rem;
+}
+
+h5{
+    font-size: 1.5rem;
+}
+.cover-container {
+    max-width: 60vw;
+}
+  
+.nav-link {
+    font-size: .9rem;
+    padding: 0.25rem 0;
+    color: rgba(255,255,255,0.5);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-bottom: 0.25rem solid transparent;
+    margin-top: 0.2rem;
+}
+
+.nav-link:hover{
+    color: white;
+    border-bottom-color:white;
+}
+
+.nav-link.active {
+    color: white;
+    border-bottom-color:white;
+
+}

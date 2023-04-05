@@ -1,0 +1,67 @@
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url(/elements/edit.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+.form-control{
+    background: transparent !important;
+    color:white !important;
+    border-radius: 0.7rem !important;
+}
+
+.input-group-text{
+    background: transparent !important;
+}
+
+.input-c{
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+textarea{
+    background: transparent !important;
+    color: white !important;
+    height: 6rem;
+}
+
+label{
+    font-size: 1rem !important;
+    font-weight: 500 !important; 
+    letter-spacing: 1px !important;
+}
+
+input:focus{
+    box-shadow: none !important;
+    border-color: white !important;
+}
+
+.deleteImage{
+    border: 1px solid white;
+    border-radius: 0.7rem;
+}
+input[type="file"]::file-selector-button {
+    background: transparent !important;
+    color: white;
+    /* font-size: 14rem; */
+}
+
+.btn-outline-warning:hover {
+    color: white;
+}
+
+input[type="text"]::placeholder {
+    color:#9FA6B2;
+  }
+
+textarea::placeholder{
+    color: #9FA6B2 !important;
+}
+
+input[type="email"]::placeholder {
+    background: transparent !important;
+    color: #9FA6B2;
+}

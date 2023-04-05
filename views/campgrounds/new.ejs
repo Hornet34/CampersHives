@@ -1,0 +1,63 @@
+<% layout('/layouts/boilerplate')%>
+<link rel="stylesheet" href="/styleSheets/edit&new.css"></link>
+<style>
+    body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url(/elements/add.jpg);
+}
+</style>
+    <div class="row m-0 text-white justify-content-center mt-3">
+        <h3 class="text-center">Create Campground <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-pencil-square mb-1" viewBox="0 0 16 16">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+          </svg></h3>
+        <div class="col-auto col-md-5 col-xl-4 ">
+            <form action="/campgrounds" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title"> Title</label>
+                    <input class="form-control" type="text" id="title" placeholder="Enter your Title" maxlength="23" name="campground[title]" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a title</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="location-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill text-primary" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                          </svg></span>
+                        <input type="text" name="campground[location]" id = "location" class="form-control input-c" aria-label="location" placeholder="Enter the Location" aria-describedby="location-label" required>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please enter location</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price"> Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee text-success" viewBox="0 0 16 16">
+                            <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z"/>
+                          </svg></span>
+                        <input type="text" name="campground[price]" id = "price" class="form-control input-c" placeholder="Enter Price per night" aria-label="price" aria-describedby="price-label" required>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please enter price</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description"> Description</label>
+                    <textarea class="form-control" id="description" name="campground[description]" placeholder="Tell us more about the Campground" required></textarea>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter description</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image"> Add images</label>
+                    <input type="file" id="image" class="form-control input" name="image" multiple required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please upload a image</div>
+                </div>
+                <div class=" d-flex justify-content-around align-items-center flex-wrap ">
+                    <button class = "btn btn-success py-2 mb-2">Add Campgound</button>
+                    <a href="/campgrounds " class="btn btn-primary text-white px-4 py-2 mb-2">Campgrounds</a>
+    
+                </div>
+            </form>
+            
+        </div>
+    </div>

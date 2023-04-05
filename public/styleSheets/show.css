@@ -1,0 +1,93 @@
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url(/elements/show.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+.carousel-inner{
+    border: 1px solid white;
+    border-radius: 0.7rem;
+}
+
+.carousel-item img {
+    height: auto;
+    max-height: 30rem;
+    object-fit: cover;
+  }
+
+#map{
+    border-radius: 0.7rem;
+    border-radius: 0.7rem;
+    height:30vh;
+}
+
+#map:hover{
+    border: 1px solid white;
+
+}
+
+.text-justify {
+    text-align: justify;
+  }
+
+.btn-outline-warning:hover {
+color: white;
+}
+
+textarea{
+    border-radius: 0.7rem !important;
+}
+
+#prevBtn{
+    display:none;
+}
+
+textarea:focus{
+    box-shadow: none !important;
+    border-color: white !important;
+}
+.description{
+    border: 1px solid white;
+    border-radius: 0.7rem;
+}
+
+.box{
+    border-bottom: 1px solid white;
+}
+.review{
+    border: 1px solid white;
+    border-radius: 0.7rem;
+}
+textarea::placeholder{
+    color: #9FA6B2 !important;
+}
+
+.reviews{
+    border: 1px solid white;
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
+    border-bottom: 0;
+}
+
+.singleReview{
+    border-bottom: 1px solid white;
+
+}
+@media (min-width: 500px){
+    #map {
+      height: 50vh;
+    }
+    .description{
+        border:0;
+    }
+    .box{
+        border-bottom: 0;
+    }
+    body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)), url(/elements/show2.jpg);
+
+    }
+  }

@@ -1,0 +1,75 @@
+<% layout('/layouts/boilerplate')%>
+<link rel="stylesheet" href="/styleSheets/edit&new.css"></link>
+
+<div class="row m-0 text-white justify-content-center mt-3">
+    <h3 class="text-center">Edit Campground <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-pencil-square mb-1" viewBox="0 0 16 16">
+        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+      </svg></h3>
+    <div class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-5">
+        <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title"> Title</label>
+                <input class="form-control" type="text" maxlength="23" id="title" name="campground[title]" placeholder="Enter your Title" value = "<%=campground.title%>" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a title</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="location-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill text-primary" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                      </svg></span>
+                    <input type="text" name="campground[location]" id = "location" class="form-control input-c" placeholder="Enter the Location"  aria-label="location" aria-describedby="location-label" value = "<%=campground.location%>" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter location</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price"> Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee text-success" viewBox="0 0 16 16">
+                        <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z"/>
+                      </svg></span>
+                    <input type="text" name="campground[price]" id = "price" class="form-control input-c" placeholder="Enter Price per night" aria-label="price" aria-describedby="price-label" value = "<%=campground.price%>" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter price</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description"> Description</label>
+                <textarea class="form-control" id="description" name="campground[description]" placeholder="Tell us more about the Campground" required><%= campground.description %> </textarea>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter description</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image"> Add images</label>
+                <input type="file" id="image" class="form-control input" name="image" multiple>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Select Images To Delete</label>
+                <fieldset>
+                  <legend class="visually-hidden">Images to delete</legend>
+                  <div class="d-flex flex-wrap deleteImage pt-2 ps-2">
+                    <% for(i in campground.images){ %>
+                      <div class="form-check d-flex align-items-center me-4 mb-4">
+                        <input class="form-check-input me-2" type="checkbox" name="deleteImages[]" value="<%=campground.images[i].filename %>" id="image-<%=i%>">
+                        <label class="form-check-label" for="image-<%=i%>">
+                          <img src="<%= campground.images[i].thumbnail %>" crossorigin="" class="rounded img-thumbnail mb-0" alt="Image <%=i%>">
+                          <span class="ms-2">Image <%=parseInt(i)+1%></span>
+                        </label>
+                      </div>
+                    <% } %>
+                  </div>
+                </fieldset>
+              </div>
+            <div class="mb-3 d-flex justify-content-around align-items-center flex-wrap">
+                <button class = "btn btn-success mt-2">Update Campgound</button>
+                <a href="/campgrounds/<%= campground._id %>" class="btn btn-danger text-white mt-2 px-5">Go Back</a>
+
+            </div>
+        </form>
+        
+    </div>
+</div>
+

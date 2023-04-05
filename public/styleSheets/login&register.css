@@ -1,0 +1,12 @@
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)), url(/elements/login.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+input{
+    color: white !important;
+    background-color: transparent !important;
+}

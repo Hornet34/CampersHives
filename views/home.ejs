@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CampersHive</title>
+        <link rel="shortcut icon" href="/elements/favicon.png" type="image/x-icon">  
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+            integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <link rel="stylesheet" href="/styleSheets/home.css">
+        <link rel="stylesheet" href="/styleSheets/navbar.css">
+    </head>
+
+    <body>
+        <div id="carousel" class="carousel slide carousel-fade"  data-bs-ride="carousel" data-bs-pause=false data-bs-interval=15000>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/elements/home-1.jpg);"></div>
+                <div class="carousel-item " style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/elements/home-2.jpg);"></div>
+                <div class="carousel-item " style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/elements/home-3.jpg);"></div>
+                <div class="carousel-item " style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/elements/home-4.jpg);"></div>
+                <div class="carousel-item " style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/elements/home-5.jpg);"></div>
+            </div>
+        </div>
+        
+
+        <header class="row m-0 text-white justify-content-center mt-2">
+        <div class="col-auto d-flex flex-wrap justify-content-center">
+            <div class="d-flex flex-column align-items-center">
+            <h5 class="mb-0">CampersHive</h5>
+            <div class="tagline1">Get Set Move <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="currentColor" class="bi bi-rocket-takeoff-fill" viewBox="0 0 16 16">
+            <path d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.578 3.578 0 0 0-.108-.563 2.22 2.22 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2.35 2.35 0 0 0-.16-.045 3.797 3.797 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.552 2.552 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526l.24-2.408Zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361.599.599.437 1.732-.36 2.531Z"/>
+            <path d="M5.205 10.787a7.632 7.632 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925Z"/></svg> 
+            </div>
+        </div>
+        <nav class="nav nav-masthead ms-0 ms-sm-4 d-flex justify-content-center">
+            <a class="nav-link" id="home-link" href="/">Home</a>
+            <a class="nav-link" id="campgrounds-link" href="/campgrounds">Campgrounds</a>
+            <a class="nav-link " id="new-campground-link" href="/campgrounds/new">+Campground</a>
+            <a class="nav-link " id="contact-link" href="/contact">Contact</a>
+
+            <% if(!currentUser) { %>
+            <a class="nav-link" id="login-link" href="/login">Login</a>
+            <a class="nav-link" id="register-link" href="/register">Register</a>
+            <% } else { %>
+            <a class="nav-link" href="/logout">Logout</a>
+            <% } %>
+        </nav>
+        </div>
+        </header> 
+
+        <div class="row m-0 justify-content-center centered">
+            <div class="col-auto text-center">
+                <p class="lead mb-0"> Welcome to CampersHive! </p>
+                        <p class="tagline2 mb-2">Explore Your Inner Self</p>
+                        <p>Jump right in and explore our many campgrounds. </p>
+                        <a href="/campgrounds" class="btn btn-secondary font-weight-bold border-white bg-white">View Campgrounds</a>
+            </div>
+        </div>
+
+        <div class="row m-0 justify-content-center footer">
+            <div class="col-auto">
+                <footer class=" text-white">
+            <p>&copy; 2023 </p>
+        </footer>
+            </div>
+        </div>
+        
+<script src="/javascripts/navbar.js"></script>
+
+
+        <!-- <div class="centered">
+            <div class="d-flex text-center text-white mainbody">
+                <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+                    <header class="mb-auto">
+                        <div>
+                            <div class="float-md-left mb-0">
+                                <h5 class="mb-0">CampersHive</h5>
+                                <p class="tagline1">Get Set Move <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="currentColor" class="bi bi-rocket-takeoff-fill" viewBox="0 0 16 16">
+                                    <path d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.578 3.578 0 0 0-.108-.563 2.22 2.22 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2.35 2.35 0 0 0-.16-.045 3.797 3.797 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.552 2.552 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526l.24-2.408Zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361.599.599.437 1.732-.36 2.531Z"/>
+                                    <path d="M5.205 10.787a7.632 7.632 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925Z"/></svg>
+                                </p>
+                            </div>
+                            
+                            <nav class="nav nav-masthead justify-content-center float-md-right">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link" href="/campgrounds">Campgrounds</a>
+                                <a class="nav-link"  href="/campgrounds/new">+Campground</a>
+                                <a class="nav-link"  href="/contact">Contact</a>
+
+                                <% if(!currentUser) { %>
+                                <a class="nav-link" href="/login">Login</a>
+                                <a class="nav-link" href="/register">Register</a>
+                                <% } else { %>
+                                <a class="nav-link" href="/logout">Logout</a>
+                                <% } %>
+                            </nav>
+                        </div>
+                    </header>
+
+                    <main class="px-3">
+                        <p class="lead mb-0"> Welcome to CampersHive! </p>
+                        <p class="tagline2 mb-2">Explore Your Inner Self</p>
+                        <p>Jump right in and explore our many campgrounds. </p>
+                        <a href="/campgrounds" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">View Campgrounds</a>
+                    </main>
+            
+                    <footer class="mt-auto text-white-50">
+                        <p>&copy; 2023 </p>
+                    </footer>
+                </div>
+            </div>
+        </div> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </body>
+</html>
+
